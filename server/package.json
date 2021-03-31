@@ -1,0 +1,35 @@
+{
+  "name": "spot-graphql-server",
+  "version": "0.3.0",
+  "private": true,
+  "engines": {
+    "yarn": "1",
+    "npm": "6",
+    "node": "8"
+  },
+  "scripts": {
+    "test": "npm run simpletest",
+    "simpletest": "node ./test/schemaTest",
+    "printSchema": "node ./bin/printSchema",
+    "watch": "nodemon serverInit.js",
+    "start": "node serverInit.js"
+  },
+  "dependencies": {
+    "body-parser": "1.19.0",
+    "cookie-parser": "1.4.5",
+    "cors": "2.8.5",
+    "debug": "4.1.1",
+    "dotenv": "8.2.0",
+    "ejs": "3.1.6",
+    "express": "4.17.1",
+    "express-graphql": "0.9.0",
+    "graphql": "14.6.0",
+    "graphql-tools": "4.0.7",
+    "morgan": "1.10.0",
+    "node-fetch": "2.6.1",
+    "node-sass-middleware": "0.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.2"
+  }
+}
