@@ -16,11 +16,11 @@ const client = new ApolloClient({
 });
 
 function App() {
-  return (
-    <ApolloProvider client={client}>
-		<Container />
-	</ApolloProvider>
-  );
+	return (
+		<ApolloProvider client={client}>
+			<Container />
+		</ApolloProvider>
+  	);
 }
 
 export default App;
