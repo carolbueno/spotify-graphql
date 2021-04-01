@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import SearchedArtistContext from "./helpers/SearchedArtistContext.js"
 
 const inputContainerStyle = {
 	width: "400px",
@@ -22,8 +23,10 @@ const inputStyle = {
 };
 
 const SearchInput = ({ onChange, value }) => {
+	const { searchedArtist, setSearchedArtist } = useContext(SearchedArtistContext);
+
 	const handleChange = evt => {
-		onChange(evt.target.value);
+		setSearchedArtist(evt.target.value);
 	}
 
 	return (
@@ -31,7 +34,7 @@ const SearchInput = ({ onChange, value }) => {
 			<input 
 				type={"text"} 
 				name={"artistName"} 
-				value={value} 
+				value={searchedArtist} 
 				onChange={handleChange} 
 				style={inputStyle} 
 				placeholder={"Search artist"}

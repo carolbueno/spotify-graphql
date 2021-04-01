@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useQuery } from "@apollo/client";
 import { LOAD_ARTISTS } from "../GraphQL/Queries.js";
 import ArtistCard from "../components/ArtistCard.jsx";
 import Loading from "../components/Loading/Loading.jsx";
 import EmptyState from "../components/EmptyState.jsx";
+import SearchedArtistContext from "../components/helpers/SearchedArtistContext.js"
 
 const resultsContainerStyle = {
 	alignSelf: "flex-start",
@@ -38,7 +39,9 @@ const getContent = (artists, loading, searchedArtist) => {
 	return getArtistCard(artists);
 };
 
-const ResultsContainer = ({ searchedArtist }) => {
+const ResultsContainer = () => {
+	const { searchedArtist } = useContext(SearchedArtistContext);
+
 	const { loading, data} = useQuery(LOAD_ARTISTS, {
 		variables: { searchedArtist }
 	});

@@ -5,7 +5,6 @@ import {
   	ApolloProvider, 
   	HttpLink
 } from "@apollo/client";
-// import { ErrorLink, onError } from "@apollo/client/link/error";
 import Container from "./containers/Container.jsx";
 
 // const link = new HttpLink({ uri: "https://spotify-graphql-server.herokuapp.com/graphql" });

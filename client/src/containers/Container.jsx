@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import SearchInput from "../components/SearchInput.jsx";
 import ResultsContainer from "./ResultsContainer.jsx";
+import SearchedArtistContextProvider from "../components/helpers/SearchedArtistContextProvider.js"
 
 const wrapperStyle = {
 	maxWidth: "1536px",
@@ -19,19 +20,16 @@ const contentWrapperStyle = {
 };
 
 const Container = () => {
-	const [searchedArtist, setSearchedArtist] = useState("");
-
-	const handleInputChange = searchedArtist => {
-		setSearchedArtist(searchedArtist);
-	}
 
 	return (
-		<div style={wrapperStyle}>
-		   <SearchInput onChange={handleInputChange} />
-			<div style={contentWrapperStyle}>
-				<ResultsContainer searchedArtist={searchedArtist} />
+		<SearchedArtistContextProvider>
+			<div style={wrapperStyle}>
+			<SearchInput />
+				<div style={contentWrapperStyle}>
+					<ResultsContainer />
+				</div>
 			</div>
-		</div>
+		</SearchedArtistContextProvider>
 	);
 };
 

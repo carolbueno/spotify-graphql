@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import SearchedArtistContext from ".";
+import SearchedArtistContext from "./SearchedArtistContext.js";
 
 const SearchedArtistContextProvider = ({ children }) => {
-    const [searchedArtist, setSearchedArtist] = useState("aaaaa");
+    const [searchedArtist, setSearchedArtist] = useState("");
 
     const context = {
         setSearchedArtist,
