@@ -8,15 +8,15 @@ For running this example locally, you must:
 
 Have a modern `node.js` version ( >=8 ) installed.
 
-Run `npm install`. 
+Run `npm install` in client and server folder.  
 
 ### run server
 
-`npm start` on the server folder to start the graphql server, then open http://localhost:4000/
+`npm start` in server folder to start the graphql server, then open http://localhost:4000/
 
 ### run client
 
-`npm start` on the client folder to start the application
+`npm start` in client folder to start the application, then open http://localhost:3000/
 
 ### questions
 1. Please describe how would you go about implementing a context hook?
